@@ -16,7 +16,8 @@ class DishDetail extends Component {
                 <Card>
                     <CardImg top src={this.props.dish.image} alt={this.props.dish.name} />
                     <CardBody>
-                      <CardTitle>{this.props.dish.name}</CardTitle>                      
+                      <CardTitle>{this.props.dish.name}</CardTitle>
+                      <CardText>{this.props.dish.description}</CardText>                   
                     </CardBody>
                 </Card>
               </div>
