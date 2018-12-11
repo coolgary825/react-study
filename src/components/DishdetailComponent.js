@@ -3,10 +3,10 @@ import { Card, CardImg, CardText, CardBody,
   CardTitle } from 'reactstrap';
 
 class DishDetail extends Component {
-    renderComments (comments) {
-      console.log(comments);
-      const comment = comments.map((obj)=> { return <Fragment key={obj.id} ><li>{obj.comment}</li>- <li> {obj.author} , {obj.date}</li></Fragment>});
-      if (comments != null)
+    renderComments (selectedComments) {
+      console.log(selectedComments);
+      const comment = selectedComments.map((obj)=> { return <Fragment key={obj.id} ><li>{obj.comment}</li>- <li> {obj.author} , {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(obj.date)))}</li></Fragment>});
+      if (selectedComments != null)
           return(
               <div>
                 <h4>Comments</h4>
