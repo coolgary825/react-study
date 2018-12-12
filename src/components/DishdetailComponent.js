@@ -38,10 +38,6 @@ import { Card, CardImg, CardText, CardBody,
   }
 
   const  DishDetail = (props) => {
-
-
-
-    
     if(props.dish != null){
       console.log(props.dish)
       return (
