@@ -1,12 +1,14 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import RenderLeader from './RenderLeader';
 
 function About(props) {
 
     const leaders = props.leaders.map((leader) => {
+        //console.log('leader',leader)
         return (
-            <p key={leader.id}>Leader {leader.name}</p>
+            <RenderLeader key={leader.id} leader = {leader} />
         );
     });
 
