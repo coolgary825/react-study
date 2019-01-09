@@ -12,7 +12,7 @@ class CommentForm extends Component {
             isModalOpen: false,
         }
         this.toggleModal = this.toggleModal.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);   
     }
 
     toggleModal(){
@@ -24,6 +24,8 @@ class CommentForm extends Component {
     handleSubmit(values) {
         console.log("Current state is: " + JSON.stringify(values));
         alert("Current state is: " + JSON.stringify(values));
+        this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
+        
     }
 
     render() {

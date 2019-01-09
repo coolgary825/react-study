@@ -16,7 +16,7 @@ import CommentForm from './CommentForm'
     );    
   }
 
-  function RenderComments({comments}) {
+  function RenderComments({comments, addComment, dishId}) {
     console.log(comments);
     const commentList = comments.map((obj)=> { return <Fragment key={obj.id} ><li>{obj.comment}</li>- <li> {obj.author} , {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(obj.date)))}</li></Fragment>});
     if (comments != null)
@@ -33,8 +33,10 @@ import CommentForm from './CommentForm'
           <div></div>
         );
   }
+  
 
-  const  DishDetail = (props) => {
+  const  DishDetail = (props) => {  
+
     if(props.dish != null){
       return (
         <div className="container">
@@ -54,8 +56,8 @@ import CommentForm from './CommentForm'
                   <RenderDish dish={props.dish} />
               </div>
               <div className="col-12 col-md-5 m-1">
-                  <RenderComments comments={props.comments} />
-                  <CommentForm />
+              <RenderComments comments={props.comments} addComment={props.addComment} dishId={props.dish.id}  />
+              <CommentForm dishId={props.dishId} addComment={props.addComment} />
               </div>
           </div>
         </div>
